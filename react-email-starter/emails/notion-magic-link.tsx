@@ -12,6 +12,7 @@ import {
 import * as React from "react";
 import Footer from "../email-components/notion/Footer";
 
+
 interface NotionMagicLinkEmailProps {
   loginCode?: string
 }

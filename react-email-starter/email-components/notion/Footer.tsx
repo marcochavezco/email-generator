@@ -1,6 +1,5 @@
-import { Text } from '@react-email/components'
-import Link from 'next/link'
-import React from 'react'
+import { Text, Link } from '@react-email/components'
+import * as React from "react";
 
 export const Footer = () => {
   return (
