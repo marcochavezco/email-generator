@@ -2,7 +2,7 @@ name: build-send-templates-action
 run-name: ${{ github.actor }} made a push to Templates library.
 on: [push]
 jobs:
-  send_template:
+  build_templates:
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -20,3 +20,15 @@ jobs:
         with:
           name: templates-build
           path: react-email-starter/out/
+  # Send the email templates
+  send_templates:
+    name: Send templates
+    runs-on: ubuntu-latest
+    needs: build_templates
+    steps:
+      - name: Download a Build Artifact
+        uses: actions/download-artifact@v4.1.4
+        with:
+          name: templates-build
+      - name: Test artifact Download
+        run: ls -R
