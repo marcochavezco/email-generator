@@ -19,4 +19,4 @@ jobs:
         uses: actions/upload-artifact@v4.3.1
         with:
           name: templates-build
-          path: react-email-starter/emails/
+          path: react-email-starter/out/
