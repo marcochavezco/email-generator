@@ -4,6 +4,9 @@ on: [push]
 jobs:
   send_template:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: '../../react-email-starter/'
     steps:
       - uses: actions/checkout@v4
       - name: Setup Node.js environment
@@ -11,4 +14,3 @@ jobs:
         with:
           node-version: 18
       - run: npm run export
-        working-directory: ../../react-email-starter/
