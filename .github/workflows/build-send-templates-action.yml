@@ -54,4 +54,4 @@ jobs:
         run: ls -R
 
       - name: Use local action to send the out directory
-        uses: ./.github/actions/send-templates
+        uses: ./.github/actions/send-templates-action/
