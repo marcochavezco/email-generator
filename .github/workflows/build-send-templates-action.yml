@@ -49,6 +49,7 @@ jobs:
         uses: actions/download-artifact@v4.1.4
         with:
           name: templates-build
+          path: ./react-email-starter/out
 
       - name: Test artifact Download
         run: ls -R
