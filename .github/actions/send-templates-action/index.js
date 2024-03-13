@@ -1,6 +1,5 @@
-/**
- * The entrypoint for the action.
- */
-const { run } = require('./main');
+async function run() {
+  console.log('hello world!');
+}
 
 run();
