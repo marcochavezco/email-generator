@@ -53,5 +53,7 @@ jobs:
       - name: Test artifact Download
         run: ls -R
 
+      - uses: actions/checkout@v4
+
       - name: Use local action to send the out directory
         uses: ./.github/actions/send-templates-action/action.yml
