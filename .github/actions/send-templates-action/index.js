@@ -26,7 +26,7 @@ async function run() {
   console.log(filesInTheFolder);
 
   filesInTheFolder.map((file) => {
-    fs.readFileSync(file, 'utf8', (err, data) => {
+    fs.readFile(file, 'utf8', (err, data) => {
       if (err) {
         console.error(err);
         return;
