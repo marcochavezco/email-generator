@@ -23,7 +23,7 @@ jobs:
       - run: npm run export
 
       - name: Use local action to send the out directory
-        run: node ./.github/actions/send-templates-action/
+        run: node ./.github/actions/send-templates-action/index.js
 
       # - name: Upload a Build Artifact
       #   uses: actions/upload-artifact@v4.3.1
