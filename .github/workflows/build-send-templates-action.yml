@@ -43,7 +43,7 @@ jobs:
           node-version: 18
       - run: npm install
       # Compile the action
-      - run: tsc ~/.github/actions/send-templates-action/index.ts --outDir ~/.github/actions/send-templates-action/dist
+      - run: tsc ./.github/actions/send-templates-action/index.ts --outDir ./.github/actions/send-templates-action/dist
 
       - name: Download a Build Artifact
         uses: actions/download-artifact@v4.1.4
@@ -54,4 +54,4 @@ jobs:
         run: ls -R
 
       - name: Use local action to send the out directory
-        uses: ~/.github/actions/send-templates-action/
+        uses: ./.github/actions/send-templates-action/action.yml

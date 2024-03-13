@@ -2,4 +2,4 @@ name: Send templates
 description: Using the out templates folder
 runs:
   using: node20
-  main: ~/.github/actions/send-templates-action/dist
+  main: ./dist
