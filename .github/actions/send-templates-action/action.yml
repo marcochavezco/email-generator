@@ -1,5 +1,5 @@
 name: Send templates
-description: Using the out templates folder
+description: Using the out templates folder to send emails.
 runs:
   using: node20
   main: ./.github/actions/send-templates-action/index.js
