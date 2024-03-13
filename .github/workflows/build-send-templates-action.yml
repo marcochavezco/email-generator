@@ -53,7 +53,7 @@ jobs:
         run: ls -R
 
       - name: Compile typescript action
-      - run: tsc ./.github/actions/send-templates/index.ts
+      - run: tsc ./.github/actions/send-templates-action/index.ts --outDir ./.github/actions/send-templates-action/dist
 
       - name: Use local action to send the out directory
       - uses: ./.github/actions/send-templates
