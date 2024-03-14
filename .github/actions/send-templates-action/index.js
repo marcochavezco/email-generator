@@ -27,18 +27,18 @@ async function run() {
 
   let files = [];
 
-  const filesArr = filesInTheFolder.map((file) => {
-    fs.readFile(file, 'utf8', (err, data) => {
+  const filesArr = filesInTheFolder.map(async (filename) => {
+    fs.readFileSync(filename, 'utf8', (err, data) => {
       if (err) {
         console.error(err);
         return;
       }
-      console.log('FILE', file, data);
+      console.log('FILE', filename, data);
 
       files = [
         ...files,
         {
-          id: file,
+          id: filename,
           content: data,
         },
       ];
@@ -46,6 +46,7 @@ async function run() {
   });
 
   console.log('-------------FILES---------------', files);
+  console.log('-------------filesArr---------------', filesArr);
 
   const jsonString = JSON.stringify(files);
   console.log('JSON', jsonString);
