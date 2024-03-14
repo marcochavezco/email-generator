@@ -35,7 +35,7 @@ async function run() {
       }
       console.log('FILE', filename, content);
 
-      return { filename, content };
+      return { id: filename, content: content };
 
       // return {
       //   id: filename,
