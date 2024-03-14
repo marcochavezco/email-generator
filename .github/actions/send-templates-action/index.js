@@ -33,16 +33,13 @@ async function run() {
         console.error(err);
         return;
       }
-      console.log('FILE', filename, content);
+      // console.log('FILE', filename, content);
 
-      return { id: filename, content: content };
-
-      // return {
-      //   id: filename,
-      //   content: content,
-      // };
+      return {
+        id: `${filename}`,
+        content: content,
+      };
     });
-    console.log('DATA', data);
     return data;
   });
 
