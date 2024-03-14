@@ -26,7 +26,7 @@ async function run() {
   const filesInTheFolder = getFiles('react-email-starter/out');
   console.log(filesInTheFolder);
 
-  const files = [];
+  let files = [];
 
   filesInTheFolder.map((file) => {
     fs.readFile(file, 'utf8', (err, data) => {
