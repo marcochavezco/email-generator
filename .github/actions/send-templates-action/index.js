@@ -35,7 +35,7 @@ async function run() {
       }
       console.log('FILE', filename, data);
 
-      files = [
+      return [
         ...files,
         {
           id: filename,
