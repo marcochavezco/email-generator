@@ -1,4 +1,4 @@
-const fs = require('node:fs/promises');
+const fs = require('fs');
 
 // Recursive function to get files
 function getFiles(dir, files = []) {
@@ -27,8 +27,8 @@ async function run() {
 
   let files = [];
 
-  const filesArr = filesInTheFolder.map(async (filename) => {
-    const data = await fs.readFile(filename, 'utf8', (err, content) => {
+  const filesArr = filesInTheFolder.map((filename) => {
+    const data = fs.readFileSync(filename, 'utf8', (err, content) => {
       if (err) {
         console.error(err);
         return;
