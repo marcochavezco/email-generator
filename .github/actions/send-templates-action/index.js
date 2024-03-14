@@ -35,12 +35,9 @@ async function run() {
       }
       // console.log('FILE', filename, content);
 
-      return {
-        id: `${filename}`,
-        content: content,
-      };
+      return content;
     });
-    return data;
+    return { id: filename, content: data };
   });
 
   // console.log('-------------FILES---------------', files);
