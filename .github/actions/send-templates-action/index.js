@@ -1,5 +1,4 @@
 const fs = require('fs');
-const { convert } = require('html-to-text');
 
 // Recursive function to get files
 function getFiles(dir, files = []) {
@@ -28,7 +27,7 @@ async function run() {
 
   let files = [];
 
-  filesInTheFolder.map((file) => {
+  const filesArr = filesInTheFolder.map((file) => {
     fs.readFile(file, 'utf8', (err, data) => {
       if (err) {
         console.error(err);
