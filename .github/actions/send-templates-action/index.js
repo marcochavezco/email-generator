@@ -20,31 +20,25 @@ function getFiles(dir, files = []) {
 }
 
 async function run() {
-  console.log('hello world!');
-
   const filesInTheFolder = getFiles('react-email-starter/out');
   console.log(filesInTheFolder);
 
-  let files = [];
-
-  const filesArr = filesInTheFolder.map((filename) => {
+  const files = filesInTheFolder.map((filename) => {
     const data = fs.readFileSync(filename, 'utf8', (err, content) => {
       if (err) {
         console.error(err);
         return;
       }
-      // console.log('FILE', filename, content);
-
       return content;
     });
+    // Pending: Clean the filename so that we can use it as a variable name
     return { id: filename, content: data };
   });
 
-  // console.log('-------------FILES---------------', files);
-  console.log('-------------filesArr---------------', filesArr);
+  console.log('--FILES---------------', files);
 
-  // const jsonString = JSON.stringify(files);
-  // console.log('JSON', jsonString);
+  const jsonString = JSON.stringify(files);
+  console.log('JSON', jsonString);
 }
 
 run();
