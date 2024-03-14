@@ -27,8 +27,8 @@ async function run() {
 
   let files = [];
 
-  const filesArr = filesInTheFolder.map(async (filename) => {
-    fs.readFileSync(filename, 'utf8', (err, data) => {
+  const filesArr = filesInTheFolder.map((filename) => {
+    fs.readFile(filename, 'utf8', (err, data) => {
       if (err) {
         console.error(err);
         return;
