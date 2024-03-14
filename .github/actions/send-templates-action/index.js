@@ -28,21 +28,19 @@ async function run() {
   let files = [];
 
   const filesArr = filesInTheFolder.map((filename) => {
-    fs.readFile(filename, 'utf8', (err, data) => {
+    const data = fs.readFile(filename, 'utf8', (err, content) => {
       if (err) {
         console.error(err);
         return;
       }
-      console.log('FILE', filename, data);
+      console.log('FILE', filename, content);
 
-      return [
-        ...files,
-        {
-          id: filename,
-          content: data,
-        },
-      ];
+      return {
+        id: filename,
+        content: content,
+      };
     });
+    return data;
   });
 
   console.log('-------------FILES---------------', files);
