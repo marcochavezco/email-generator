@@ -22,8 +22,11 @@ function getFiles(dir, files = []) {
 
 async function run() {
   console.log('hello world!');
+
   const filesInTheFolder = getFiles('react-email-starter/out');
   console.log(filesInTheFolder);
+
+  const files = [];
 
   filesInTheFolder.map((file) => {
     fs.readFile(file, 'utf8', (err, data) => {
@@ -32,8 +35,20 @@ async function run() {
         return;
       }
       console.log('FILE', file, typeof data);
+
+      const dataObj = {
+        id: file,
+        content: data,
+      };
+
+      files = [...files, dataObj];
     });
   });
+
+  console.log('-------------FILES---------------', files);
+
+  const jsonString = JSON.stringify(files);
+  console.log('JSON', jsonString);
 }
 
 run();
