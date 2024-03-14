@@ -34,14 +34,15 @@ async function run() {
         console.error(err);
         return;
       }
-      console.log('FILE', file, typeof data);
+      console.log('FILE', file, data);
 
-      const dataObj = {
-        id: file,
-        content: data,
-      };
-
-      files = [...files, dataObj];
+      files = [
+        ...files,
+        {
+          id: file,
+          content: data,
+        },
+      ];
     });
   });
 
