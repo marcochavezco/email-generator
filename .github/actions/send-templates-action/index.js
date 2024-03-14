@@ -35,19 +35,22 @@ async function run() {
       }
       console.log('FILE', filename, content);
 
-      return {
-        id: filename,
-        content: content,
-      };
+      return { filename, content };
+
+      // return {
+      //   id: filename,
+      //   content: content,
+      // };
     });
+    console.log('DATA', data);
     return data;
   });
 
-  console.log('-------------FILES---------------', files);
+  // console.log('-------------FILES---------------', files);
   console.log('-------------filesArr---------------', filesArr);
 
-  const jsonString = JSON.stringify(files);
-  console.log('JSON', jsonString);
+  // const jsonString = JSON.stringify(files);
+  // console.log('JSON', jsonString);
 }
 
 run();
