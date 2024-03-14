@@ -31,7 +31,8 @@ async function run() {
         console.error(err);
         return;
       }
-      console.log('FILE', file, data);
+      const text = convert(data);
+      console.log('FILE', file, text);
     });
   });
 }
